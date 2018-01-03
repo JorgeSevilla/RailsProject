@@ -1,13 +1,13 @@
 <%= form_with model: @article, local: true do |form| %>
 
- <% if @article.error.any? %>
+ <% if @article.errors.any? %>
   <div id ="error_explanation">
    <h2>
-    <%= pluralize(@article.error.count, "error") %> prohibited
+    <%= pluralize(@article.errors.count, "error") %> prohibited
         this article from being saved:
    </h2>
    <ul>
-    <% @article.error.full_message.each do |msg| %>
+    <% @article.errors.full_messages.each do |msg| %>
      <li><%= msg %></li>
     <% end %>
     </ul>
